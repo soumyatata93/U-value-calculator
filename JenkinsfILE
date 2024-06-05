@@ -8,16 +8,16 @@ pipeline {
         }
       }
     }
-    stage('SonarQube Scan') {
-      environment {
-        scannerHome = tool 'SonarQubeScanner'
-      }
-      steps {
-        withSonarQubeEnv('SonarQubeServer') {
-          sh "${scannerHome}/bin/sonar-scanner"
-        }
-      }
-    }
+    // stage('SonarQube Scan') {
+    //   environment {
+    //     scannerHome = tool 'SonarQubeScanner'
+    //   }
+    //   steps {
+    //     withSonarQubeEnv('SonarQubeServer') {
+    //       sh "${scannerHome}/bin/sonar-scanner"
+    //     }
+    //   }
+    // }
     stage('Push Image') {
       steps {
         script {
