@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+      <head>
+            <link rel="stylesheet" href="style.css">
+       </head>
+
+      <body>
+
+            <div class="page-content">
+                  <div class="tabbed">
+                        <input type="radio" id="tab1" name="css-tabs" checked>
+                        <input type="radio" id="tab2" name="css-tabs">
+                        <input type="radio" id="tab3" name="css-tabs">
+                        
+                        <ul class="tabs">
+                              <li class="tab"><label for="tab1">Compare Wall</label></li>
+                              <li class="tab"><label for="tab2">Compare Roof</label></li>
+                              <li class="tab"><label for="tab3">Compare Floor</label></li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                              
+                              <form>
+                                    (Wall) please enter thickness in milimeters (mm)
+                                    <div style="display:flex">
+                                          
+                                       
+                                         
+                                          <div style="position: relative;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Hardboard</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-hardboard"  placeholder="Change Between  3mm - 3.2mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Plywood</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-plywood"  placeholder="Change Between  3.6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>EPS (Polystyrene)<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">
+                                                            Expanded polystyrene (EPS) is a lightweight cellular plastic material consisting of small hollow spherical balls that are expanded through a molding process in our factories to create a cost effective, highly efficient material used in hundreds of different applications with insulation being one of the many uses.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-EPS" placeholder="Change Between  25mm - 100mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>MDF <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Medium-density fibreboard is an engineered wood product made by breaking down hardwood or softwood residuals into wood fibres, often in a defibrator, combining it with wax and a resin binder, and forming it into panels by applying high temperature and pressure. MDF is generally denser than plywood.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-MDF"  placeholder="Change Between  6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>WPC <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Wood-plastic composites are composite materials made of wood fiber/wood flour and thermoplastic such as polythene, polypropylene, polyvinyl chloride, or polylactic acid. In addition to wood fiber and plastic.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-WPC" placeholder="Change Between  10mm - 25mm">
+                                                </div> 
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Timber</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-timber"  placeholder="Change Between  7.5mm - 20.5mm">
+                                                </div>
+                                          </div>
+                                          
+                                          <div style="padding-left:50px;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Multi Foil<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Multifoil insulation is thin reflective layers of insulation. These layers comprise of reflective films interspersed with insulating sections, generally made from wadding. These wadding and reflective layers interact with each other to maximise the thermal efficiency of the structure in which they are applied.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-multiFoil"  placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>PIR<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Polyisocyanurate is a highly insulative building material that helps to thermally insulate a garden building or property. It help to keep the building cool inside during hot summer days.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-PIR"  placeholder="Change Between  25mm - 100mm">
+                                                </div>
+                                                            
+                                                <div class="UavlueformGroup">
+                                                      <label>Glass</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-glass"  placeholder="Change Between  8mm - 10mm">
+                                                </div class="UavlueformGroup">
+                                                      
+                                                <div class="UavlueformGroup">
+                                                      <label>Gypsum Board<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Drywall is a panel made of calcium sulfate dihydrate, with or without additives, typically extruded between thick sheets of facer and backer paper, used in the construction of interior walls and ceilings</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-gypsumBoard"  placeholder="Change Between  6mm - 20mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                       <label>Air Space<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">If an air space is left between two layers making a wall or roof in any building, the air trapped between two layers being poor conductor of heat acts as a barrier to heat transfer. Heat is transferred across an air space by a combination of conduction, convection and radiation. Believe it or not, air itself can provide a level of insulation.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="wall-air" placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueCalculateButton">
+                                                      <button type="button" onclick="calculateWallUValue('wall','wall-hardboard','wall-plywood','wall-EPS','wall-MDF','wall-WPC','wall-timber','wall-multiFoil','wall-PIR','wall-glass','wall-gypsumBoard','wall-air')">Calculate U-Value</button>
+                                                </div>
+                                          
+                                          </div>
+                                    </div>
+
+                              </form>
+
+                              <div id="WallUvalueResult"></div>
+                             
+                        </div>
+                        
+                        <div class="tab-content">
+                              
+                              <form>
+                                    (Roof) please enter thickness in milimeters (mm)
+                                     <div style="display:flex">
+                                          
+                                          <div style="position:relative;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Hardboard</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-hardboard"  placeholder="Change Between  3mm - 3.2mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Plywood</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-plywood"  placeholder="Change Between  3.6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>EPS (Polystyrene) <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">
+                                                            Expanded polystyrene (EPS) is a lightweight cellular plastic material consisting of small hollow spherical balls that are expanded through a molding process in our factories to create a cost effective, highly efficient material used in hundreds of different applications with insulation being one of the many uses.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-EPS" placeholder="Change Between  25mm - 100mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>MDF <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Medium-density fibreboard is an engineered wood product made by breaking down hardwood or softwood residuals into wood fibres, often in a defibrator, combining it with wax and a resin binder, and forming it into panels by applying high temperature and pressure. MDF is generally denser than plywood.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-MDF"  placeholder="Change Between  6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>WPC <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Wood-plastic composites are composite materials made of wood fiber/wood flour and thermoplastic such as polythene, polypropylene, polyvinyl chloride, or polylactic acid. In addition to wood fiber and plastic.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-WPC" placeholder="Change Between  10mm - 25mm">
+                                                </div> 
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Timber</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-timber"  placeholder="Change Between  7.5mm - 20.5mm">
+                                                </div>
+                                          </div>
+                                          
+                                          <div style="padding-left:50px;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Multi Foil <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Multifoil insulation is thin reflective layers of insulation. These layers comprise of reflective films interspersed with insulating sections, generally made from wadding. These wadding and reflective layers interact with each other to maximise the thermal efficiency of the structure in which they are applied. </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-multiFoil"  placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>PIR<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Polyisocyanurate is a highly insulative building material that helps to thermally insulate a garden building or property. It help to keep the building cool inside during hot summer days.
+                                                      </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-PIR"  placeholder="Change Between 25mm - 100mm">
+                                                </div>
+                                                            
+                                                <div class="UavlueformGroup">
+                                                      <label>Glass</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-glass"  placeholder="Change Between 8mm - 10mm">
+                                                </div class="UavlueformGroup">
+                                                      
+                                                <div class="UavlueformGroup">
+                                                      <label>Gypsum Board<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Drywall is a panel made of calcium sulfate dihydrate, with or without additives, typically extruded between thick sheets of facer and backer paper, used in the construction of interior walls and ceilings
+                                                      </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-gypsumBoard"  placeholder="Change Between 6mm - 20mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                       <label>Air Space<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">If an air space is left between two layers making a wall or roof in any building, the air trapped between two layers being poor conductor of heat acts as a barrier to heat transfer. Heat is transferred across an air space by a combination of conduction, convection and radiation. Believe it or not, air itself can provide a level of insulation.
+
+                                                       </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="roof-air" placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueCalculateButton">
+                                                      <button type="button"  onclick="calculateWallUValue('roof','roof-hardboard','roof-plywood','roof-EPS','roof-MDF','roof-WPC','roof-timber','roof-multiFoil','roof-PIR','roof-glass','roof-gypsumBoard','roof-air')">Calculate U-Value</button>
+                                                </div>
+                                          
+                                          </div>
+                                    </div>
+
+                              </form>
+
+                              <div id="roofUvalueResult"></div>
+                             
+                        </div>
+
+                        <div class="tab-content">
+                              
+                              <form>
+
+                                    (Floor) please enter thickness in milimeters (mm)
+
+                                     <div style="display:flex">
+                                          
+                                          <div style="position:relative;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Hardboard</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-hardboard"  placeholder="Change Between  3mm - 3.2mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Plywood</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-plywood"  placeholder="Change Between  3.6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>EPS (Polystyrene) <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">
+                                                            Expanded polystyrene (EPS) is a lightweight cellular plastic material consisting of small hollow spherical balls that are expanded through a molding process in our factories to create a cost effective, highly efficient material used in hundreds of different applications with insulation being one of the many uses.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-EPS" placeholder="Change Between  25mm - 100mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>MDF <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Medium-density fibreboard is an engineered wood product made by breaking down hardwood or softwood residuals into wood fibres, often in a defibrator, combining it with wax and a resin binder, and forming it into panels by applying high temperature and pressure. MDF is generally denser than plywood.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-MDF"  placeholder="Change Between  6mm - 25mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>WPC <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Wood-plastic composites are composite materials made of wood fiber/wood flour and thermoplastic such as polythene, polypropylene, polyvinyl chloride, or polylactic acid. In addition to wood fiber and plastic.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-WPC" placeholder="Change Between  10mm - 25mm">
+                                                </div> 
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>Timber</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-timber"  placeholder="Change Between  7.5mm - 20.5mm">
+                                                </div>
+                                          </div>
+                                          
+                                          <div style="padding-left:50px;">
+                                                <br/>
+                                                <div class="UavlueformGroup">
+                                                      <label>Multi Foil <span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Multifoil insulation is thin reflective layers of insulation. These layers comprise of reflective films interspersed with insulating sections, generally made from wadding. These wadding and reflective layers interact with each other to maximise the thermal efficiency of the structure in which they are applied.</span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-multiFoil"  placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                      <label>PIR<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Polyisocyanurate is a highly insulative building material that helps to thermally insulate a garden building or property. It help to keep the building cool inside during hot summer days.
+                                                      </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-PIR"  placeholder="Change Between  25mm - 100mm">
+                                                </div>
+                                                            
+                                                <div class="UavlueformGroup">
+                                                      <label>Glass</label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-glass"  placeholder="Change Between  8mm - 10mm">
+                                                </div class="UavlueformGroup">
+                                                      
+                                                <div class="UavlueformGroup">
+                                                      <label>Gypsum Board<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">Drywall is a panel made of calcium sulfate dihydrate, with or without additives, typically extruded between thick sheets of facer and backer paper, used in the construction of interior walls and ceilings
+                                                      </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-gypsumBoard"  placeholder="Change Between  6mm - 20mm">
+                                                </div>
+                                                
+                                                <div class="UavlueformGroup">
+                                                       <label>Air Space<span class="tooltip">&nbsp;&nbsp;<strong>i</strong> <span class="tooltiptext">If an air space is left between two layers making a wall or roof in any building, the air trapped between two layers being poor conductor of heat acts as a barrier to heat transfer. Heat is transferred across an air space by a combination of conduction, convection and radiation. Believe it or not, air itself can provide a level of insulation.
+                                                      </span> </span></label><br/>
+                                                      <input class="UvalueForm" type="number" class="form-control" id="floor-air" placeholder="Enter Thickness In mm">
+                                                </div>
+                                                
+                                                <div class="UavlueCalculateButton">
+                                                      <button type="button"  onclick="calculateWallUValue('floor','floor-hardboard','floor-plywood','floor-EPS','floor-MDF','floor-WPC','floor-timber','floor-multiFoil','floor-PIR','floor-glass','floor-gypsumBoard','floor-air')">Calculate U-Value</button>
+                                                </div>
+                                          
+                                          </div>
+                                    </div>
+
+                              </form>
+
+                              <div id="floorUvalueResult"></div>
+                             
+                        </div>
+                        
+                      
+                  </div>
+                  
+            </div>
+            <script src="UvalueScript.js"></script>
+      </body>
+
+</html>
